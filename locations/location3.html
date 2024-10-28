@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js/glider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glider-js/glider.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        .glider-prev, .glider-next {
+            color: black;
+            background-color: white;
+            opacity: 0.7;
+            border: none;
+            border-radius: 50%;
+            padding: 8px;
+            z-index: 10;  
+        }
+        .glider-prev:hover, .glider-next:hover {
+            background-color: black; /* Darker background on hover */
+        }
+    </style>
+</head>
+<body class="flex min-h-screen flex-col">
+
+ 
+    
+    <!-----header section-->
+    <header class="fixed top-0 left-0 py-1 md:py-2 xl:py-4 w-full bg-white shadow-md transition-all ease-in-out duration-300 z-[90]">
+        <div class="container px-3 md:px-8 xl:px-32 2xl:px-40 mx-auto flex justify-between items-center">
+            <a href="../" class="text-xl font-bold">
+                <img src="../img/logo.png" alt="Boss burger" class="w-[100px] -ms-2 md:w-[120px]">
+            </a>
+            <nav>
+                <ul class="hidden lg:flex space-x-4 transition-all ease-in-out duration-1000">
+                    <li><a href="../" class="text-black px-4 py-1 rounded-2xl hover:bg-[#AA0C2F] hover:text-white transition-all ease-in-out duration-500">Home</a></li>
+                    <li><a href="../aboutus.html" class="text-black px-4 py-1 rounded-2xl hover:bg-[#AA0C2F] hover:text-white transition-all ease-in-out duration-500">About us</a></li>
+                    <li><a href="../menu.html" class="text-black px-4 py-1 rounded-2xl hover:bg-[#AA0C2F] hover:text-white transition-all ease-in-out duration-500">Menu</a></li>
+                </ul>
+            </nav>
+            <div class="text-3xl text-black">
+                <button onclick="toggleSidebar()" class="lg:hidden">
+                    <i class="ri-menu-line"></i>
+                </button>
+                <a href="../locations.html" class="bg-[#AA0C2F] text-base px-8 py-2 rounded-md hidden lg:block text-white">Location</a>
+            </div>
+        </div>
+    </header>
+
+        <!-----sidebar section-->
+        <aside id="sidebar" class="fixed top-0 -left-[100%] z-[1000] h-screen w-full max-w-[280px] bg-white shadow-md lg:hidden text-black transition-all ease-in-out duration-500">
+            <div class="px-4 py-2">
+                <div onclick="toggleSidebar()" class="flex justify-end text-3xl text-[#AA0C2F] cursor-pointer">
+                <i class="ri-close-circle-line"></i>
+                </div>
+                <img src="../img/logo.png" alt="Boss burger" class="w-[150px] mx-auto mb-4">
+                <ul class="transition-all ease duration-500 pr-4">
+                    <li><a href="../" class="block p-2 transition-transform duration-300 hover:bg-red-200 hover:translate-x-2 hover:rounded-lg">Home</a></li>
+                    <li><a href="../aboutus.html" class="block p-2 transition-transform duration-300 hover:bg-red-200 hover:translate-x-2 hover:rounded-lg">About us</a></li>
+                    <li><a href="../menu.html" class="block p-2 transition-transform duration-300 hover:bg-red-200 hover:translate-x-2 hover:rounded-lg">Menu</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Overlay -->
+        <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none z-40 transition-opacity duration-300"></div>
+
+        <!--main-->
+    <main class="flex-grow pt-24 md:pt-32">
+        <section>
+            <div class="container px-3 md:px-8 xl:px-32 2xl:px-40 mx-auto">
+                <article class="grid gap-8 grid-cols-1 lg:grid-cols-2">
+                    <div class="relative" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400"> <!-- Add relative positioning to this div -->
+                        <div class="glider-contain">
+                            <div class="glider overflow-hidden">
+                                <figure>
+                                    <img class="w-full h-[300px] md:h-[400px] bg-cover" src="../img/build3.png" alt="Image 1">
+                                </figure>
+                                <figure>
+                                    <img class="w-full h-[300px] md:h-[400px] bg-cover" src="../img/build4.png" alt="Image 2">
+                                </figure>
+                                <figure>
+                                    <img class="w-full h-[300px] md:h-[400px] bg-cover" src="../img/build5.png" alt="Image 3">
+                                </figure>
+                                <figure>
+                                    <img class="w-full h-[300px] md:h-[400px] bg-cover" src="../img/build6.png" alt="Image 4">
+                                </figure>
+                            </div>
+                        </div>
+                        <div id="dots"></div>
+                        <button class="glider-prev absolute left-3 top-[50%] transform -translate-y-1/2"><i class="ri-arrow-drop-left-line"></i></button>
+                        <button class="glider-next absolute right-3 top-[50%] transform -translate-y-1/2"><i class="ri-arrow-drop-right-line"></i></button>
+                    </div>
+                    <div class="max-w-[80%]" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                        <address class="not-italic text-3xl md:text-4xl font-bold mb-2">Bole Bulbula</address>
+                        <p class="text-gray-700 mb-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium ea, ullam possimus minus qui est sint nihil totam velit unde.</p>
+                        <p class="text-green-600 font-semibold mb-4"><i class="ri-checkbox-circle-fill text-green-500 text-xl mr-2"></i>Parking available</p>
+                        <a href="https://www.google.com/maps/place/Boss+Burger+Addis/@8.997569,38.7849358,15z/data=!4m2!3m1!1s0x0:0x1717740e78fc081d?sa=X&ved=1t:2428&ictx=111" target="_blank">
+                            <button class="mt-3 w-fit py-3 px-6 rounded-lg text-white bg-[#AA0C2F] font-semibold hover:bg-red-600">See it on Google Maps</button>
+                        </a>
+                     </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!---Footer section-->        
+
+<footer class="bg-black text-white mt-16">
+    <div class="container mx-auto px-4 md:px-10 xl:px-32 2xl:px-40 text-center grid grid-cols-1 sm:grid-cols-3 gap-8 py-8">
+        <div class="flex justify-center flex-col ">
+            <div class="mx-auto mb-4">
+                <img src="../img/logo.png" class="h-[20px] md:h-[32px]"  alt="">
+            </div>
+            <h2 class="font-bold text-xl mb-2">Address</h2>
+            <address class="text-gray-200 not-italic">
+                <p><span><i class="ri-map-pin-line"></i></span>Ethiopia, Addis Ababa</p>
+                <p><span><i class="ri-phone-line"></i></span> <a href="tel:+251902424848">+251 902424848</a></p>
+                <p><span><i class="ri-mail-line"></i></span> <a href="mailto:bossburger@gmail.com">bossburger@gmail.com</a></p>
+            </address>
+        </div>
+        
+        <div>
+            <h2 class="font-bold text-xl mb-2">Quick links</h2>
+            <ul class="text-gray-200">
+                <li><a href="">Home</a></li>
+                <li><a href="">Menu</a></li>
+                <li><a href="">About us</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">Location</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h2 class="font-bold text-xl mb-2">Social links</h2>
+            <ul class="text-gray-200">
+                <li><a href=""><span><i class="ri-tiktok-line"></i></span> Tiktok</a></li>
+                <li><a href=""><span><i class="ri-instagram-line"></i></span> Instagram</a></li>
+                <li><a href=""><span><i class="ri-facebook-circle-line"></i></span> Facebook</a></li>
+                <li><a href=""><span><i class="ri-telegram-line"></i></span> Telegram</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="pb-4 pl-4 text-center">&copy; 2024 Boss Burger</div>
+    <p class="pb-4 pl-4 text-center text-gray-500">Developed by <a href="tel">Nebiyou Chanie</a></p>
+</footer>
+
+<!----js-->
+<script src="../navbar.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+     
+     AOS.init({
+    once: true,  
+  });
+
+</script>
+    <script>
+        new Glider(document.querySelector('.glider'), {
+            slidesToShow: 1,
+            dots: '#dots',
+            draggable: true,
+            arrows: {
+                prev: '.glider-prev',
+                next: '.glider-next'
+            },
+            autoplay: true, // Enable autoplay
+            loop:true,
+            autoplayDelay: 3000, // Delay between slides in milliseconds
+            responsive: [
+                {
+                    breakpoint: 640,
+                    settings: {
+                        slidesToShow: 1,
+                        dots: '#dots',
+                        draggable: true,
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        draggable: true,
+                    }
+                }
+            ]
+        });
+    </script>
+</body>
+</html>

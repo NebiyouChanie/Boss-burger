@@ -1,0 +1,513 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+
+    <style>
+        .filter-btn.active {
+        background-color: #AA0C2F;
+        color: white;
+    }
+
+    </style>
+
+ </head>
+ <body class="flex min-h-screen flex-col">
+
+
+
+
+    <!-----header section-->
+    <header class="fixed top-0 left-0 py-1 md:py-2 xl:py-4 w-full bg-white shadow-md transition-all ease-in-out duration-300 z-[90]">
+      <div class="container px-3 md:px-8 xl:px-32 2xl:px-40 mx-auto flex justify-between items-center">
+          <a href="/" class="text-xl font-bold">
+              <img src="img/logo.png" alt="Boss burger" class="w-[100px] -ms-2 md:w-[120px]">
+          </a>
+          <nav>
+              <ul class="hidden lg:flex space-x-4 transition-all ease-in-out duration-1000">
+                  <li><a href="/" class="text-black px-4 py-1 rounded-2xl hover:bg-[#AA0C2F] hover:text-white transition-all ease-in-out duration-500">Home</a></li>
+                  <li><a href="/aboutus.html" class="text-black px-4 py-1 rounded-2xl hover:bg-[#AA0C2F] hover:text-white transition-all ease-in-out duration-500">About</a></li>
+                  <li><a href="/menu.html" class="px-4 py-1 rounded-2xl bg-[#AA0C2F] text-white transition-all ease-in-out duration-500">Menu</a></li>
+              </ul>
+          </nav>
+          <div class="text-3xl text-black">
+              <button onclick="toggleSidebar()" class="lg:hidden">
+                  <i class="ri-menu-line"></i>
+              </button>
+              <a href="locations.html" class="bg-[#AA0C2F] text-base px-8 py-2 rounded-md hidden lg:block text-white">Location</a>
+          </div>
+      </div>
+  </header>
+
+      <!-----sidebar section-->
+      <aside id="sidebar" class="fixed top-0 -left-[100%] z-[1000] h-screen w-full max-w-[280px] bg-white shadow-md lg:hidden text-black transition-all ease-in-out duration-500">
+          <div class="px-4 py-2">
+              <div onclick="toggleSidebar()" class="flex justify-end text-3xl text-[#AA0C2F] cursor-pointer">
+              <i class="ri-close-circle-line"></i>
+              </div>
+              <img src="img/logo.png" alt="Boss burger" class="w-[150px] mx-auto mb-4">
+              <ul class="transition-all ease duration-500 pr-4">
+                  <li><a href="/" class="block mb-2 p-2 transition-transform duration-300 hover:bg-red-200 hover:translate-x-2 hover:rounded-lg">Home</a></li>
+                  <li><a href="/aboutus.html" class="block mb-2 p-2 transition-transform duration-300 hover:bg-red-200 hover:translate-x-2 hover:rounded-lg">About</a></li>
+                  <li><a href="/menu.html" class="block mb-2 p-2 transition-transform duration-300 bg-red-200 translate-x-2 rounded-lg">Menu</a></li>
+              </ul>
+          </div>
+      </aside>
+
+      <!-- Overlay -->
+      <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none z-40 transition-opacity duration-300"></div>
+
+
+
+
+
+
+    <!---main-->
+
+<main class="flex-grow pt-24 md:pt-32 min-h-screen">
+
+    <section class="mb-12">
+        <div class="text-center">
+            <h1 class="text-3xl md:text-6xl font-bold mb-8" style="font-family: 'Oswald';">Our Menu</h1>
+            <div id="filtersContainer">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="menu" class="grid gap-8 max-w-[90%] md:max-w-[60%] xl:grid-cols-2 mx-auto">
+        
+        </div>
+    </section>
+</main>
+
+
+
+<!---Footer section-->        
+
+    <!---Footer section-->        
+
+    <footer class="bg-black text-white mt-16">
+      <div class="container mx-auto px-4 md:px-10 xl:px-32 2xl:px-40 text-center grid grid-cols-1 sm:grid-cols-3 gap-8 py-8">
+          <div class="flex justify-center flex-col ">
+              <div class="mx-auto mb-4">
+                  <img src="img/logo.png" class="h-[20px] md:h-[32px]"  alt="">
+              </div>
+              <h2 class="font-bold text-xl mb-2">Address</h2>
+              <address class="text-gray-200 not-italic">
+                  <p><span><i class="ri-map-pin-line"></i></span>Ethiopia, Addis Ababa</p>
+                  <p><span><i class="ri-phone-line"></i></span> <a href="tel:+251902424848">+251 902424848</a></p>
+                  <p><span><i class="ri-mail-line"></i></span> <a href="mailto:bossburger@gmail.com">bossburger@gmail.com</a></p>
+              </address>
+          </div>
+          
+          <div>
+              <h2 class="font-bold text-xl mb-2">Quick links</h2>
+              <ul class="text-gray-200">
+                  <li><a href="">Home</a></li>
+                  <li><a href="">Menu</a></li>
+                  <li><a href="">About us</a></li>
+                  <li><a href="">Gallery</a></li>
+                  <li><a href="">Location</a></li>
+              </ul>
+          </div>
+  
+          <div>
+              <h2 class="font-bold text-xl mb-2">Social links</h2>
+              <ul class="text-gray-200">
+                  <li><a href=""><span><i class="ri-tiktok-line"></i></span> Tiktok</a></li>
+                  <li><a href=""><span><i class="ri-instagram-line"></i></span> Instagram</a></li>
+                  <li><a href=""><span><i class="ri-facebook-circle-line"></i></span> Facebook</a></li>
+                  <li><a href=""><span><i class="ri-telegram-line"></i></span> Telegram</a></li>
+              </ul>
+          </div>
+      </div>
+  
+      <div class="pb-4 pl-4 text-center">&copy; 2024 Boss Burger</div>
+      <p class="pb-4 pl-4 text-center text-gray-500">Developed by <a href="tel">Nebiyou Chanie</a></p>
+  </footer>
+  
+
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="navbar.js"></script>
+<script>
+
+
+
+//Aos
+
+    AOS.init({
+        once: true,  
+    });
+
+  
+    const data = [
+  {
+    id: "1",
+    title: "Plain Patty",
+    description: "Grilled seasoned beef patty, sesame burger buns, lettuce, tomato, onion, pickles, and house sauce.",
+    category: "burger",
+    img: "img/m1.jpg",
+    price: "370"
+  },
+  {
+    id: "2",
+    title: "Cheesy Bun",
+    description: "Grilled beef patty, sesame burger buns, a slice of cheddar cheese, lettuce, tomato, onion, and house sauce.",
+    category: "burger",
+    img: "img/m2.jpg",
+    price: "420"
+  },
+  {
+    id: "3",
+    title: "Chilly Cheeseburger",
+    description: "Beef patty topped with cheddar cheese, house sauce, jalapeño, lettuce, and tomato.",
+    category: "burger",
+    img: "img/m8.jpg",
+    price: "440"
+  },
+  {
+    id: "4",
+    title: "Sausage Cheeseburger",
+    description: "Grilled beef patty, cheddar cheese, sausage slices, house sauce, lettuce, tomato, and onion.",
+    category: "burger",
+    img: "img/m4.jpg",
+    price: "440"
+  },
+  {
+    id: "5",
+    title: "Bacon Cheeseburger",
+    description: "Beef patty, crispy bacon, cheddar cheese, house sauce, lettuce, tomato, and onion.",
+    category: "burger",
+    img: "img/m4.jpg",
+    price: "460"
+  },
+  {
+    id: "6",
+    title: "Texas Style Hamburger",
+    description: "Beef patty, cheddar cheese, BBQ sauce, crispy onion rings, lettuce, tomato, and pickles.",
+    category: "burger",
+    img: "img/m5.jpg",
+    price: "460"
+  },
+  {
+    id: "7",
+    title: "Double The Trouble",
+    description: "Two beef patties, double cheddar cheese, house sauce, lettuce, tomato, and pickles.",
+    category: "burger",
+    img: "img/m6.jpg",
+    price: "500"
+  },
+  {
+    id: "8",
+    title: "Double Chilly Cheeseburger",
+    description: "Two beef patties, cheddar cheese, house sauce, jalapeños, lettuce, and tomato.",
+    category: "burger",
+    img: "img/m7.jpg",
+    price: "510"
+  },
+  {
+    id: "9",
+    title: "Double Sausage Cheeseburger",
+    description: "Two beef patties, cheddar cheese, sausage slices, house sauce, lettuce, tomato, and onion.",
+    category: "burger",
+    img: "img/m8.jpg",
+    price: "510"
+  },
+  {
+    id: "10",
+    title: "Double Texas Style Hamburger",
+    description: "Two beef patties, cheddar cheese, BBQ sauce, crispy onion rings, lettuce, tomato, and pickles.",
+    category: "burger",
+    img: "img/m9.jpg",
+    price: "530"
+  },
+  {
+    id: "11",
+    title: "Double Bacon Cheeseburger",
+    description: "Two beef patties, crispy bacon, cheddar cheese, house sauce, lettuce, tomato, and onion.",
+    category: "burger",
+    img: "img/m2.jpg",
+    price: "530"
+  },
+  {
+    id: "12",
+    title: "Triple Threat",
+    description: "Three beef patties, cheddar cheese, house sauce, lettuce, tomato, and pickles.",
+    category: "burger",
+    img: "img/m1.jpg",
+    price: "560"
+  },
+  {
+    id: "13",
+    title: "Grilled Fish Fillet Burger",
+    description: "Grilled fish fillet with lettuce, tomato, and tartar sauce.",
+    category: "fasting burgers",
+    img: "img/m9.jpg",
+    price: "300"
+  },
+  {
+    id: "14",
+    title: "Tuna Sandwich",
+    description: "Tuna salad with lettuce and tomato on a toasted bun.",
+    category: "fasting burgers",
+    img: "img/m8.jpg",
+    price: "230"
+  },
+  {
+    id: "15",
+    title: "Vegan Grilled Burger",
+    description: "Grilled vegan patty with lettuce, tomato, and vegan mayo.",
+    category: "fasting burgers",
+    img: "img/m7.jpg",
+    price: "220"
+  },
+  {
+    id: "16",
+    title: "French Fries",
+    description: "Golden, crispy fries, seasoned to perfection.",
+    category: "sides",
+    img : "img/side1.jpeg",
+    price: "180"
+  },
+  {
+    id: "17",
+    title: "Ketchup",
+    description: "A side of ketchup for dipping.",
+    category: "sides",
+    img : "img/side2.webp",
+    price: "2.5"
+  },
+  {
+    id: "18",
+    title: "Hot Sauce",
+    description: "A serving of spicy hot sauce.",
+    category: "sides",
+    img : "img/side3.jpg",
+    price: "15"
+  },
+  {
+    id: "19",
+    title: "Pickles",
+    description: "Fresh, tangy pickles to complement your meal.",
+    category: "sides",
+    img : "img/side1.jpeg",
+    price: "15"
+  },
+  {
+    id: "20",
+    title: "Jalapeños",
+    description: "Spicy jalapeño slices to add a kick to your burger or side.",
+    category: "sides",
+    img : "img/side2.webp",
+    price: "15"
+  },
+  {
+    id: "21",
+    title: "Grilled Onions",
+    description: "Grilled onions for extra flavor.",
+    category: "sides",
+    img : "img/side3.jpg",
+    price: "15"
+  },
+  {
+    id: "22",
+    title: "Sausage",
+    description: "A side of sausage to complement your burger.",
+    category: "sides",
+    img : "img/side1.jpeg",
+    price: "20"
+  },
+  {
+    id: "23",
+    title: "Beef Sausage",
+    description: "Savory beef sausage to go with your meal.",
+    category: "sides",
+    img : "img/side2.webp",
+    price: "20"
+  },
+  {
+    id: "24",
+    title: "Beef Meat Loaf",
+    description: "A serving of homemade beef meatloaf.",
+    category: "sides",
+    img : "img/side3.jpg",
+    price: "20"
+  },
+  {
+    id: "25",
+    title: "BBQ’d Mushrooms",
+    description: "Grilled mushrooms with a BBQ twist.",
+    category: "sides",
+    img : "img/side1.jpeg",
+    price: "20"
+  },
+  {
+    id: "26",
+    title: "The Boss Sauce",
+    description: "A signature sauce from Boss Burgers.",
+    category: "sides",
+    img : "img/side2.webp",
+    price: "30"
+  },
+  {
+    id: "27",
+    title: "Barbecue Sauce",
+    description: "Rich, tangy barbecue sauce.",
+    category: "sides",
+    img : "img/side3.jpg",
+    price: "30"
+  },
+  {
+    id: "28",
+    title: "Mustard",
+    description: "Classic mustard to go with your burger.",
+    category: "sides",
+    img : "img/side1.jpeg",
+    price: "30"
+  },
+  {
+    id: "29",
+    title: "Chilly Sauce",
+    description: "A spicy chili sauce for extra heat.",
+    category: "sides",
+    img : "img/side2.webp",
+    price: "25"
+  },
+  {
+    id: "30",
+    title: "Spring Water",
+    description: "500ml bottled spring water.",
+    category: "drinks",
+    img : "img/drink4.jpg",
+    price: "30"
+  },
+  {
+    id: "31",
+    title: "Soft Drink",
+    description: "300ml soft drink (various flavors).",
+    category: "drinks",
+    img : "img/drink1.jpg",
+    price: "50"
+  },
+  {
+    id: "32",
+    title: "Novida",
+    description: "300ml Novida, refreshing fruit-flavored soda.",
+    category: "drinks",
+    img : "img/drink2.png",
+    price: "50"
+  },
+  {
+    id: "33",
+    title: "Plastic Soft Drink",
+    description: "500ml plastic bottle of soft drink.",
+    category: "drinks",
+    img : "img/drink3.jpg",
+    price: "70"
+  },
+  {
+    id: "34",
+    title: "Ambo Mineral Water",
+    description: "500ml sparkling mineral water.",
+    category: "drinks",
+    img : "img/drink4.jpg",
+    price: "50"
+  },
+  {
+    id: "35",
+    title: "Predator Energy Drink",
+    description: "350ml Predator energy drink.",
+    category: "drinks",
+    img : "img/drink4.jpg",
+    price: "70"
+  },
+  {
+    id: "36",
+    title: "Arada Flavored Alcoholic Drink",
+    description: "350ml Arada flavored alcoholic beverage.",
+    category: "drinks",
+    img : "img/drink4.jpg",
+    price: "70"
+  }
+];
+
+const filters = data.reduce((acc, item) => {
+    if (!acc.includes(item.category)) {
+        acc.push(item.category);
+    }
+    return acc;
+}, []);
+
+// Render the filter buttons
+filtersContainer.innerHTML = filters.map(category => `
+    <button class="filter-btn px-4 py-1 mx-1 my-2 rounded-md font-semibold text-[#AA0C2F] hover:bg-[#AA0C2F] hover:text-white border-[#AA0C2F] border-2" data-category="${category}">
+        ${category}
+    </button>
+`).join('');
+
+// Add the active state styling for the buttons
+const menu = document.getElementById('menu');
+
+// Function to render menu items with dynamic AOS delay
+const renderMenuItems = (filteredData) => {
+    const menuItems = filteredData.reduce((html, item, index) => {
+        // Set a dynamic delay for each item (e.g., delay by 100ms per item)
+        const delay = index * 100;
+
+        return html += `
+            <article class="max-w-full rounded-se-md rounded-ss-md overflow-hidden grid md:grid-cols-2 md:rounded-se-0 md:rounded-es-md"
+            data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="${delay}"> 
+                <figure class="w-full h-[200px]">
+                    <img src="${item.img}" alt="" class="w-full h-full object-cover bg-center">
+                </figure>
+                <figcaption class="border-[#AA0C2F] bg-white pt-2 md:pt-0 md:ps-4 pb-4 ">
+                    <h2 class="text-xl font-bold">${item.title}</h2>
+                    <p class="text-base opacity-80 leading-[22px] mb-2">${item.description}</p>
+                    <p class="text-black text-md font-semibold">${item.price} Birr</p>
+                    <button class="text-sm mt-3 w-fit py-2 px-4 rounded-md text-white bg-[#AA0C2F] font-semibold hover:bg-red-600"><a href="tel:+251902424848">Order Now</a></button>
+                </figcaption>
+            </article>`;
+    }, '');
+    menu.innerHTML = menuItems;
+};
+
+// Initially filter for 'burger' category and render
+const burgerItems = data.filter(item => item.category === 'burger');
+renderMenuItems(burgerItems);
+
+// Select the first button (burger button) by default and apply the active class
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    if (btn.getAttribute('data-category') === 'burger') {
+        btn.classList.add('active');
+    }
+});
+
+// Event listener for filter buttons
+filtersContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('filter-btn')) {
+        // Remove active class from all buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to the clicked button
+        e.target.classList.add('active');
+        
+        // Filter the data based on the category of the clicked button
+        const category = e.target.getAttribute('data-category');
+        const filteredData = data.filter(item => item.category === category);
+        renderMenuItems(filteredData);
+    }
+});
+
+</script>
+
+ </body>
+ </html>

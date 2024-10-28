@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boss</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     
+
+    <!-- Glider.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+        
+    <!-- Your custom CSS file (optional) -->
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@1.12.8/dist/jarallax.min.js"></script>
+
+</head>
+<body>
+
+    <!-----header section-->
+    <header class="fixed top-0 left-0 py-1 md:py-2 xl:py-4 w-full bg-white shadow-xl transition-all ease-in-out duration-300 z-[90]">
+        <div class="container px-3 md:px-8 xl:px-32 2xl:px-40 mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-bold">
+                <img src="img/logo.png" alt="Boss burger" class="w-[100px] -ms-2 md:w-[120px]">
+            </a>
+            <nav>
+                <ul class="hidden lg:flex space-x-4 transition-all ease-in-out duration-1000">
+                    <li><a href="/" class="px-4 py-1 rounded-2xl bg-[#AA0C2F] text-white transition-all ease-in-out duration-500">Home</a></li>
+                    <li><a href="/aboutus.html" class="text-black px-4 py-1 rounded-2xl hover:bg-[#AA0C2F] hover:text-white transition-all ease-in-out duration-500">About us</a></li>
+                    <li><a href="/menu.html" class="text-black px-4 py-1 rounded-2xl hover:bg-[#AA0C2F] hover:text-white transition-all ease-in-out duration-500">Menu</a></li>
+                </ul>
+            </nav>
+            <div class="text-3xl text-black">
+                <button onclick="toggleSidebar()" class="lg:hidden">
+                    <i class="ri-menu-line"></i>
+                </button>
+                <a href="/locations.html" class="bg-[#AA0C2F] text-base px-8 py-2 rounded-md hidden lg:block text-white">Location</a>
+            </div>
+        </div>
+    </header>
+
+        <!-----sidebar section-->
+        <aside id="sidebar" class="fixed top-0 -left-[100%] z-[1000] h-screen w-full max-w-[280px] bg-white shadow-md lg:hidden text-black transition-all ease-in-out duration-500">
+            <div class="px-4 py-2">
+                <div onclick="toggleSidebar()" class="flex justify-end text-3xl text-[#AA0C2F] cursor-pointer">
+                <i class="ri-close-circle-line"></i>
+                </div>
+                <img src="img/logo.png" alt="Boss burger" class="w-[150px] mx-auto mb-4">
+                <ul class="transition-all ease duration-500 pr-4">
+                    <li><a href="/" class="block mb-2 p-2 transition-transform duration-300 bg-red-200 translate-x-2 rounded-lg">Home</a></li>
+                    <li><a href="/aboutus.html" class="block mb-2 p-2 transition-transform duration-300 hover:bg-red-200 hover:translate-x-2 hover:rounded-lg">About us</a></li>
+                    <li><a href="/menu.html" class="block mb-2 p-2 transition-transform duration-300 hover:bg-red-200 hover:translate-x-2 hover:rounded-lg">Menu</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Overlay -->
+        <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none z-40 transition-opacity duration-300"></div>
+
+    <main>
+    <!-- Hero section -->
+    <section class="h-svh bg-cover bg-[center_right_43%] mb-20 sm:mb-32 xl:mb-40 " style="background-image: url(img/heroimg.jpg);">
+        <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70"></div> 
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-40"></div> 
+        <div class="container px-4 md:px-10 xl:px-32 2xl:px-40 mx-auto flex justify-start items-center w-full h-full">
+            <div class="z-50 " data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-5xl sm:text-6xl md:7xl xl:text-8xl max-w-[70%] sm:max-w-[50%]    font-bold mb-2 md:mb-4  text-white " style="font-family: 'Oswald';">THE BEST BURGER IN TOWN</h1>
+                <p class="max-w-[70%] sm:max-w-[50%]   mb-4 md:mb-6 text-base leading-[22px] text-white tracking-wider font-light">Bring Your Friends and Family - Delicious Burgers and Good Vibes Are Waiting!</p>
+                <div class=" flex justify-start space-x-2 sm:space-x-3">
+                    <a href="tel:+251902424848" class="bg-[#AA0C2F] hover:bg-white hover:text-[#AA0C2F] text-white font-semibold hover:scale-105 py-2 px-6 rounded-md transition-all ease-in-out duration-300">Order Now</a>
+                    <a href="/menu.html" class="bg-white text-[#AA0C2F] font-semibold py-2 px-6 rounded-md hover:bg-gray-200 hover:scale-105 transition-all ease-in-out duration-300">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Section -->
+    <section>
+        <div class="container px-4 md:px-10 xl:px-32 2xl:px-40 mx-auto text-center mb-20 sm:mb-32 xl:mb-40">
+            <h2 class="text-3xl md:text-5xl mb-3  font-bold" style="font-family: 'Oswald';">SPECIAL <br> BURGERS</h2>
+            <p class="mb-8 sm:mb-12">Treat Yourself to Something Special. You’ll Love Every Bite.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center place-items-center">
+                <!-- First Burger Card -->
+                <article class="max-w-full h-full  rounded-2xl shadow-lg overflow-hidden" 
+                        data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0">
+                    <a href="special/special1.html">
+                        <figure class="h-full max-h-[250px]">
+                            <img src="img/special1.jpg" alt="A delicious Timatim Silise burger" class="w-full h-full object-cover">
+                        </figure>
+                        <figcaption class="pt-1 pb-6 px-4 bg-[#AA0C2F] text-white h-full">
+                            <h2 class="text-xl font-semibold mb-1">Cheesy Bun</h2>
+                            <p class="text-base opacity-70 text-white md:tracking-wider ">Grilled beef patty, sesame burger buns, a slice of cheddar cheese and house sauce.</p>
+                            <p class="mt-2 text-md sm:text-lg font-bold">400 Birr</p>
+                            <a href="special/special1.html">
+                                <button class="text-sm mt-3 w-fit py-2 px-8 rounded-3xl bg-white text-[#AA0C2F] font-semibold hover:bg-gray-200">Order Now</button>
+                            </a>
+                        </figcaption>
+                    </a>
+                </article>
+
+                <article class="max-w-full h-full  rounded-2xl shadow-lg overflow-hidden" 
+                        data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <a href="special/special2.html">
+                        <figure class="h-full max-h-[250px]">
+                            <img src="img/special2.jpg" alt="A delicious Timatim Silise burger" class="w-full h-full object-cover">
+                        </figure>
+                        <figcaption class="pt-1 pb-6 px-4 bg-[#AA0C2F] text-white h-full">
+                            <h2 class="text-xl font-semibold mb-1">Bacon Cheeseburger</h2>
+                            <p class="text-base opacity-70 text-white md:tracking-wider ">Two beef patties, cheddar cheese, BBQ sauce, lettuce, tomato, and pickles.</p>
+                            <p class="mt-2 text-md sm:text-lg font-bold">400 Birr</p>
+                            <a href="special/special2.html">
+                                <button class="text-sm mt-3 w-fit py-2 px-8 rounded-3xl bg-white text-[#AA0C2F] font-semibold hover:bg-gray-200">Order Now</button>
+                            </a>
+                        </figcaption>
+                    </a>
+                </article>
+
+                <article class="max-w-full h-full  rounded-2xl shadow-lg overflow-hidden" 
+                        data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <a href="special/special3.html">
+                        <figure class="h-full max-h-[250px]">
+                            <img src="img/special3.jpg" alt="A delicious Timatim Silise burger" class="w-full h-full object-cover">
+                        </figure>
+                        <figcaption class="pt-1 pb-6 px-4 bg-[#AA0C2F] text-white h-full">
+                            <h2 class="text-xl font-semibold mb-1">Sausage Cheeseburger</h2>
+                            <p class="text-base opacity-70 text-white md:tracking-wider ">Beef patty topped with cheddar cheese, house sauce, jalapeño, lettuce, and tomato.</p>
+                            <p class="mt-2 text-md sm:text-lg font-bold">400 Birr</p>
+                            <a href="special/special3.html">
+                                <button class="text-sm mt-3 w-fit py-2 px-8 rounded-3xl bg-white text-[#AA0C2F] font-semibold hover:bg-gray-200">Order Now</button>
+                            </a>
+                        </figcaption>
+                    </a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!---About us-->
+    <section class="h-[70vh] text-white jarallax relative" data-jarallax="{'speed': 0.5, 'imgElement': false}" style="background-image: url('img/parallex.jpg'); background-position: center;">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container  mx-auto px-4 md:px-10 xl:px-32 2xl:px-40 h-full flex items-center">
+            <div class="z-30 max-w-[80%] md:max-w-[60%]">
+                <h2 class="text-4xl md:text-5xl text-white font-bold mb-4 leading-[36px] " style="font-family: 'Oswald';" >Our Story</h2>
+                <p class="text-white w-[90%] mb-6 md:tracking-wider">we believe a great burger should be more than a meal—it should celebrate Ethiopian taste and community. Our mission is to serve authentic burgers, crafted with passion and inspired by global flavors.</p>
+                <a href="/aboutus.html">
+                    <button class="px-8 py-2 bg-white rounded-md hover: text-black font font-semibold">Read more</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!---Menu section-->        
+    <section class="pb-20 sm:pb-32 pt-20 sm:pt-32    ">
+        <div class="container mx-auto px-4 md:px-10 xl:px-32 2xl:px-40 text-center">
+            <h2 class="text-3xl md:text-4xl mb-3  font-bold" style="font-family: 'Oswald';">MENU</h2>
+            <p class="mb-8 sm:mb-12">Discover Our Delicious Offerings.</p>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 xl:gap-4 justify-center items-center">
+                <article class="max-w-full rounded-se-md rounded-ss-md lg:rounded-se-2xl lg:rounded-ss-2xl overflow-hidden ">
+                    <a href="menu/menuitem1.html">
+                        <figure class="w-full h-[284px]">
+                            <img src="img/menu2.jpg" alt="" class="w-full h-full object-cover">
+                        </figure>
+                        <figcaption class="border-[#AA0C2F] bg-white border-x-2 border-b-2 px-4 pt-2 pb-4 rounded-ee-md rounded-es-md">
+                            <h2 class="text-xl font-semibold mb-1">Texas Style Hamburger</h2>
+                            <p class=" text-gray-600 text-md font-bold">620 Birr</p>
+                            <a href="menu/menuitem1.html">
+                                <button class="text-sm mt-3 w-fit py-2 px-8 rounded-3xl text-white bg-[#AA0C2F] font-semibold hover:bg-red-600">See details</button>
+                            </a>
+                        </figcaption>
+                    </a>
+                </article>
+                <article class="max-w-full rounded-se-md rounded-ss-md overflow-hidden ">
+                    <a href="menu/menuitem2.html">
+                        <figure class="w-full h-[284px]">
+                            <img src="img/SaveInsta.App_360107609_18002142373926243_7956949187223794737_n.jpg" alt="" class="w-full h-full object-cover" >
+                        </figure>
+                        <figcaption class="border-[#AA0C2F] bg-white border-x-2 border-b-2 px-4 pt-2 pb-4 rounded-ee-md rounded-es-md">
+                            <h2 class="text-xl font-semibold mb-1">Double The Trouble</h2>
+                            <p class=" text-gray-600 text-md font-bold">540 Birr</p>
+                            <a href="menu/menuitem2.html">
+                                <button class="text-sm mt-3 w-fit py-2 px-8 rounded-3xl text-white bg-[#AA0C2F] font-semibold hover:bg-red-600">See details</button>
+                            </a>
+                        </figcaption>
+                    </a>
+                </article>
+                <article class="max-w-full rounded-se-md rounded-ss-md overflow-hidden ">
+                    <a href="menu/menuitem3.html">
+                        <figure class="w-full h-[284px]">
+                            <img src="img/menu3.jpg" alt="" class="w-full h-full object-cover" >
+                        </figure>
+                        <figcaption class="border-[#AA0C2F] bg-white border-x-2 border-b-2 px-4 pt-2 pb-4 rounded-ee-md rounded-es-md">
+                            <h2 class="text-xl font-semibold mb-1">Double Chilly Cheeseburger</h2>
+                            <p class=" text-gray-600 text-md font-bold">500 Birr</p>
+                            <a href="menu/menuitem3.html">
+                                <button class="text-sm mt-3 w-fit py-2 px-8 rounded-3xl text-white bg-[#AA0C2F] font-semibold hover:bg-red-600">See details</button>
+                            </a>
+                                
+                        </figcaption>
+                    </a>
+                </article>
+                <article class="max-w-full rounded-se-md rounded-ss-md overflow-hidden">
+                    <a href="menu/menuitem4.html">
+                        <figure class="w-full h-[284px]">
+                            <img src="img/menu4.jpg" alt="" class="w-full h-full object-cover">
+                        </figure>
+                        <figcaption class="border-[#AA0C2F] bg-white border-x-2 border-b-2 px-4 pt-2 pb-4 rounded-ee-md rounded-es-md">
+                            <h2 class="text-xl font-semibold mb-1">Double Sausage Cheeseburger</h2>
+                            <p class=" text-gray-600 text-md font-bold">440 Birr</p>
+                            <a href="menu/menuitem4.html">
+                                <button class="text-sm mt-3 w-fit py-2 px-8 rounded-3xl text-white bg-[#AA0C2F] font-semibold hover:bg-red-600">See details</button>
+                            </a>
+                        </figcaption>
+                    </a>
+                </article>
+            </div>
+            <a href="/menu.html"> <button  class="px-8 py-2 mt-8 font-semibold border-2 text-[#AA0C2F] border-[#AA0C2F] rounded-md hover:bg-[#AA0C2F] hover:text-white transition-all ease duration-300">View full Menu</button></a>
+        </div>
+
+    </section>
+ 
+
+<!--Testimonials-->
+    <section class="mb-20 sm:mb-32 xl:mb-40 h-[70vh] pt-6 rounded-ee-[20%] rounded text-white relative" style="background-image: url('img/place1.jpg'); background-repeat: no-repeat;background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg bg-black opacity-75 rounded-ee-[20%] rounded"></div>
+        <div class="container mx-auto px-4 md:px-10 xl:px-32 2xl:px-40  h-full flex items-end justify-start md:items-center pb-8"
+            data-aos="fade-right" data-aos-duration="1000" data-aos-delay="0">
+            <div class=" md:max-w-[50%]">
+                <h2 class="text-4xl max-w-[70%] md:max-w-[100%]  md:text-5xl text-white font-bold mb-4 leading-[36px] " style="font-family: 'Oswald';" >Our Customers love us</h2>
+                <div class="mb-6">
+                    <article class="flex items-start gap-3 p-2 ">
+                        <figure class="h-[40px] w-[40px] rounded-full overflow-hidden flex-shrink-0">
+                            <img src="img/social1.jpg" alt="Profile picture of Biruk Solomon" class="w-full h-full object-cover">
+                        </figure>
+                        <figcaption>
+                            <h3 class="font-semibold text-sm text-white">Biruktawit Solomon</h3>
+                            <div class="flex space-x-1 text-yellow-500 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <p class="text-sm text-gray-200 mt-1">Good burger, awesome presentation and outdoor setting👍👍👍</p>
+                        </figcaption>
+                    </article>
+                    <article class="flex items-start gap-3 p-2 ">
+                        <figure class="h-[40px] w-[40px] rounded-full overflow-hidden flex-shrink-0">
+                            <img src="img/userpost3.jpg" alt="Profile picture of Biruk Solomon" class="w-full h-full object-cover">
+                        </figure>
+                        <figcaption>
+                            <h3 class="font-semibold text-sm text-white">Dawit Alehegn</h3>
+                            <div class="flex space-x-1 text-yellow-500 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <p class="text-sm text-gray-200 mt-1">i went there through giveaway and it was the best burger in town recommend you to go and try it👍👍.</p>
+                        </figcaption>
+                    </article>
+                    <article class="flex items-start gap-3 p-2 ">
+                        <figure class="h-[40px] w-[40px] rounded-full overflow-hidden flex-shrink-0">
+                            <img src="img/userpost4.jpg" alt="Profile picture of Biruk Solomon" class="w-full h-full object-cover">
+                        </figure>
+                        <figcaption>
+                            <h3 class="font-semibold text-sm text-white">Kidist Haile</h3>
+                            <div class="flex space-x-1 text-yellow-500 text-sm">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <p class="text-sm text-gray-200 mt-1">If you go there try the texas burger it is the best burger i have eaten in a long time</p>
+                        </figcaption>
+                    </article>
+                    
+                </div>
+                <a href="https://www.google.com/search?q=boss+burger&oq=boss&gs_lcrp=EgRlZGdlKgwIABBFGDsYgAQY-QcyDAgAEEUYOxiABBj5BzIRCAEQRRg5GEMYsQMYgAQYigUyDAgCEAAYQxiABBiKBTIGCAMQRRg7MgcIBBAAGIAEMgcIBRAAGIAEMgYIBhBFGDwyBggHEEUYPDIGCAgQRRg80gEHOTI3ajBqMagCALACAA&sourceid=chrome&ie=UTF-8">
+                    <button class="px-8 py-2 bg-white rounded-md hover: text-black font font-semibold hover:bg-transparent border-2 border-white hover:text-white  transition-all duration-300 ease-in-out">Rate us</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+<!--Delivery--->
+<section class="mb-20 sm:mb-32 xl:mb-40 h-[70vh] rounded-se-[20%]  rounded text-white relative" style="background-image: url('img/place3.jpeg'); background-repeat: no-repeat; background-size: cover;background-position: center;">
+    <div class="absolute inset-0 bg-black opacity-75 rounded-se-[20%] rounded"></div>
+    <div class="container mx-auto px-4 md:px-10 h-full xl:px-32 2xl:px-40 flex items-end justify-start md:items-center pb-8"
+            data-aos="fade-right" data-aos-duration="1000" data-aos-delay="0">
+        <div class=" max-w-[80%] md:max-w-[50%]">
+            <h2 class="text-4xl md:text-5xl text-white font-bold mb-3 leading-[36px] " style="font-family: 'Oswald';" >We will come where ever you are.</h2>
+            <p class="text-white mb-6 md:tracking-wider">Staying in? No worries! Order your Boss Burger for delivery through Z Mall, BeU Delivery, or Tikus Delivery. Or, if you'd like a little extra perk, go with our in-house delivery for a 5% discount—our way of saying thanks for ordering directly with us.</p>
+            <a href="tel:+251902424848">
+                <button class="px-8 py-2 bg-white rounded-md hover: text-black font font-semibold hover:bg-transparent border-2 border-white hover:text-white  transition-all duration-300 ease-in-out">Place Your Order</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!---Location section-->        
+<section class="mb-20 sm:mb-32 xl:mb-40">
+    <div class="container px-4 md:px-10 xl:px-32 2xl:px-40 mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl mb-3 font-bold" style="font-family: 'Oswald';">Our Location</h2>
+        <p class="mb-8">Come Visit Us – We Can’t Wait to Welcome You.</p>
+        <div class="grid gap-8 sm:grid-cols-2  justify-center items-center">
+            <article class="relative max-w-full rounded-md overflow-hidden "
+                    data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="0">
+                <a href="locations/location1.html">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+                    <figure class="w-full h-[350px] relative">
+                        <img src="img/location1.webp" alt="" class="w-full h-full object-cover">
+                    </figure>
+                    <figcaption class=" absolute bottom-8 left-4 text-start max-w-[70%] z-20">
+                        <h2 class="text-xl text-white font-semibold">Bole Behind Sheger</h2>
+                        <p class=" text-white md:tracking-wider">Around bolle airport next to the city mall</p>
+                        <a href="locations/location1.html">
+                            <button class="text-sm mt-3 w-fit py-2 px-4 rounded-3xl bg-white text-black border-2 border-white font-semibold hover:bg-transparent hover:text-white  transition-all duration-300 ease-in-out">See location details</button>
+                        </a>
+                    </figcaption>
+                </a>
+            </article>
+            <article class="relative max-w-full rounded-md overflow-hidden "
+                    data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                <a href="locations/location2.html">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+                    <figure class="w-full h-[350px] relative">
+                        <img src="img/location2.webp" alt="" class="w-full h-full object-cover">
+                    </figure>
+                    <figcaption class=" absolute bottom-8 left-4 text-start max-w-[70%] z-20">
+                        <h2 class="text-xl text-white font-semibold">Smmit</h2>
+                        <p class=" text-white md:tracking-wider">In front of summit hotel next to the bus stop</p>
+                        <a href="locations/location2.html">
+                            <button class="text-sm mt-3 w-fit py-2 px-4 rounded-3xl bg-white text-black border-2 border-white font-semibold hover:bg-transparent hover:text-white  transition-all duration-300 ease-in-out">See location details</button>                    
+                        </a>
+                    </figcaption>
+                </a>
+            </article>
+            <article class="relative max-w-full rounded-md overflow-hidden "
+                    data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                <a href="locations/location3.html">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
+                    <figure class="w-full h-[350px] relative">
+                        <img src="img/location3.webp" alt="" class="w-full h-full object-cover">
+                    </figure>
+                    <figcaption class=" absolute bottom-8 left-4 text-start max-w-[70%] z-20">
+                        <h2 class="text-xl text-white font-semibold">Bole Bullbula</h2>
+                        <p class="text-white md:tracking-wider">Next to comercial bank of ethiopia</p>
+                        <a href="locations/location3.html">
+                            <button class="text-sm mt-3 w-fit py-2 px-4 rounded-3xl bg-white text-black border-2 border-white font-semibold hover:bg-transparent hover:text-white  transition-all duration-300 ease-in-out">See location details</button>
+                        </a>
+                    </figcaption>
+                </a>
+            </article>   
+        </div>
+    </div>
+</section>
+
+
+<!---socialmeida proofs-->
+<section>
+    <div class="container mx-auto px-4 md:px-10 xl:px-32 2xl:px-40 py-8 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-3" style="font-family: 'Oswald';">We are famous on <br>the internet</h2>
+        <p class="mb-8">Check Out Our Positive Reviews from Content Creators.</p>
+        
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10">
+            
+            <!-- TikTok Embeds -->
+            <div class="glider-contain relative">
+                <div class="glider">
+
+                    <!-- TikTok Embed 1 -->
+                    <div class="p-4 rounded shadow-md">
+                        <blockquote class="tiktok-embed" 
+                            cite="https://www.tiktok.com/@shegergebeta/video/7253803464512523526" 
+                            data-video-id="7253803464512523526" 
+                            style="width: 100%; max-height: 500px;">
+                            <section>
+                                <a target="_blank" title="@shegergebeta" href="https://www.tiktok.com/@shegergebeta">@shegergebeta</a>
+                                <a target="_blank" title="TikTok" href="https://www.tiktok.com/">TikTok</a>
+                            </section>
+                        </blockquote>
+                    </div>
+
+                    <!-- TikTok Embed 2 -->
+                    <div class="p-4 rounded shadow-md">
+                        <blockquote class="tiktok-embed" 
+                            cite="https://www.tiktok.com/@nathnaeltakele/video/7312785109743209734" 
+                            data-video-id="7312785109743209734" 
+                            style="width: 100%; max-height: 500px;">
+                            <section>
+                                <a target="_blank" title="@nathnaeltakele" href="https://www.tiktok.com/@nathnaeltakele">@nathnaeltakele</a>
+                                <a target="_blank" title="TikTok" href="https://www.tiktok.com/">TikTok</a>
+                            </section>
+                        </blockquote>
+                    </div>
+
+                    <!-- TikTok Embed 3 -->
+                    <div class="p-4 rounded shadow-md">
+                        <blockquote class="tiktok-embed" 
+                            cite="https://www.tiktok.com/@addaddisfoods/video/7328682586795019526" 
+                            data-video-id="7328682586795019526" 
+                            style="width: 100%; max-height: 500px;">
+                            <section>
+                                <a target="_blank" title="@addaddisfoods" href="https://www.tiktok.com/@addaddisfoods">@addaddisfoods</a>
+                                <a target="_blank" title="TikTok" href="https://www.tiktok.com/">TikTok</a>
+                            </section>
+                        </blockquote>
+                    </div>
+
+                    <!-- TikTok Embed 4 -->
+                    <div class="p-4 rounded shadow-md">
+                        <blockquote class="tiktok-embed" 
+                            cite="https://www.tiktok.com/@review_addis/video/7328402252480204037" 
+                            data-video-id="7328402252480204037" 
+                            style="width: 100%; max-height: 500px;">
+                            <section>
+                                <a target="_blank" title="@review_addis" href="https://www.tiktok.com/@review_addis">@review_addis</a>
+                                <a target="_blank" title="TikTok" href="https://www.tiktok.com/">TikTok</a>
+                            </section>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- Glider Controls -->
+                <button class="glider-prev absolute left-0 top-[50%] translate-y-[-50%]"><i class="ri-arrow-drop-left-line"></i></button>
+                <button class="glider-next absolute right-0 top-[50%] translate-y-[-50%]"><i class="ri-arrow-drop-right-line"></i></button>
+                <div id="dots" class="dots"></div>
+            </div>
+            
+            <!-- YouTube Embeds -->
+            <div class="grid grid-cols-1 gap-2">
+                <div class="aspect-w-16 aspect-h-9 max-w-full">
+                    <iframe 
+                        src="https://www.youtube.com/embed/-gdvgP5lSjI?controls=0&start=166"
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        class="w-full h-full rounded-lg shadow-md" 
+                        style="max-height: 500px;">
+                    </iframe>
+                </div>
+                <div class="aspect-w-16 aspect-h-9 max-w-full">
+                    <iframe 
+                        src="https://www.youtube.com/embed/7tiylaKFq5c?start=341"
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        class="w-full h-full rounded-lg shadow-md" 
+                        style="max-height: 500px;">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+
+<!---Asking for order-->
+ 
+<section class="my-40" data-aos="flip-right" data-aos-duration="2000" data-aos-delay="0">
+    <div class="w-[90%] mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl  font-bold" style="font-family: 'Oswald';">Time to test our Burger <br> &#x1F60A;</h2>
+        <a href="/menu.html">
+            <button class="px-8 py-2 mt-8 font-semibold border-2 text-white bg-[#AA0C2F] border-[#AA0C2F] rounded-md hover:text-[#AA0C2F] hover:bg-white transition-all ease duration-300">Order Now</button>
+        </a>
+        
+    </div>
+</section>
+
+
+</main>
+
+<!---Footer section-->        
+
+<footer class="bg-black text-white">
+    <div class="container mx-auto px-4 md:px-10 xl:px-32 2xl:px-40 text-center grid grid-cols-1 sm:grid-cols-3 gap-8 py-8">
+        <div class="flex justify-center flex-col ">
+            <div class="mx-auto mb-4">
+                <img src="../img/logo.png" class="h-[20px] md:h-[32px]"  alt="">
+            </div>
+            <h2 class="font-bold text-xl mb-2">Address</h2>
+            <address class="text-gray-200 not-italic">
+                <p><span><i class="ri-map-pin-line"></i></span>Ethiopia, Addis Ababa</p>
+                <p><span><i class="ri-phone-line"></i></span> <a href="tel:+251902424848">+251 902424848</a></p>
+                <p><span><i class="ri-mail-line"></i></span> <a href="mailto:bossburger@gmail.com">bossburger@gmail.com</a></p>
+            </address>
+        </div>
+        
+        <div>
+            <h2 class="font-bold text-xl mb-2">Quick links</h2>
+            <ul class="text-gray-200">
+                <li><a href="/">Home</a></li>
+                <li><a href="/menu.html">Menu</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="/locations.html">Location</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h2 class="font-bold text-xl mb-2">Social links</h2>
+            <ul class="text-gray-200">
+                <li><a href=""><span><i class="ri-tiktok-line"></i></span> Tiktok</a></li>
+                <li><a href=""><span><i class="ri-instagram-line"></i></span> Instagram</a></li>
+                <li><a href="https://l.instagram.com/?u=https%3A%2F%2Fm.facebook.com%2Fbossburgeraddis251&e=AT1wu0KrAFHAvJxLcMtZOmtXHFJ6VKK2ga8KXNga6pwGxV0pUUm46SOI9vNr9bUOv5uu_zuoT-ghjJMw4rIbzSs8wHL7ZTiud8N3Chc"><span><i class="ri-facebook-circle-line"></i></span> Facebook</a></li>
+                <li><a href=""><span><i class="ri-telegram-line"></i></span> Telegram</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="pb-4 pl-4 text-center">&copy; 2024 Boss Burger</div>
+    <p class="pb-4 pl-4 text-center text-gray-500">Developed by <a href="tel">Nebiyou Chanie</a></p>
+</footer>
+
+ 
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        new Glider(document.querySelector('.glider'), {
+            slidesToShow: 1,   // Number of slides to show at once (adjust as needed)
+            slidesToScroll: 1, // Number of slides to scroll at once
+            draggable: true,   // Allows dragging to navigate the slider
+            dots: '#dots',     // Assign dots for pagination
+            arrows: {
+                prev: '.glider-prev',
+                next: '.glider-next'
+            },
+
+            responsive: [
+                {
+                    breakpoint: 640,  
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 1024,  
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 1024,  
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    });
+</script>
+
+
+
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+<script>
+    jarallax(document.querySelectorAll('.jarallax'), {
+        speed: 0.5,
+        imgElement: false
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+    <!--javascript-->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+ <script src="navbar.js"></script>
+<script>
+   
+    AOS.init({
+    once: true,  
+  });
+
+
+
+
+  // Initialize Glider for smooth carousel
+new Glider(document.querySelector('.glider'), {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  dots: '#dots',
+  arrows: {
+    prev: '.glider-prev',
+    next: '.glider-next'
+  }
+});
+ 
+
+</script>
+
+</body>
+</html>
